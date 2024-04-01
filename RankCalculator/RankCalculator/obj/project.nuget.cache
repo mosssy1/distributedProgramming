@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "gjka8G0b9EKOPA9KH0cknt0ai6Qn0XR0kCaSs75gXNnlgICLTm7QDYC4Wrd1z11duNOyCuVOffvfgD3jwgs7Lw==",
+  "success": true,
+  "projectFilePath": "D:\\ycheba\\distrProgramming\\distributedProgramming\\RankCalculator\\RankCalculator\\RankCalculator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Arina\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Arina\\.nuget\\packages\\microsoft.extensions.caching.stackexchangeredis\\8.0.3\\microsoft.extensions.caching.stackexchangeredis.8.0.3.nupkg.sha512",
+    "C:\\Users\\Arina\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\Arina\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.1\\microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\Arina\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "C:\\Users\\Arina\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\Arina\\.nuget\\packages\\nats.client\\1.1.4\\nats.client.1.1.4.nupkg.sha512",
+    "C:\\Users\\Arina\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\Arina\\.nuget\\packages\\stackexchange.redis\\2.7.33\\stackexchange.redis.2.7.33.nupkg.sha512",
+    "C:\\Users\\Arina\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
