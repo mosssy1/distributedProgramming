@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RankCalculator", "RankCalculator\RankCalculator.csproj", "{2BC331E1-0466-4E87-AD58-1F67A824C7B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RankCalculator", "RankCalculator.csproj", "{59BD9B11-2895-46B8-B9FE-28530236491A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2BC331E1-0466-4E87-AD58-1F67A824C7B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2BC331E1-0466-4E87-AD58-1F67A824C7B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2BC331E1-0466-4E87-AD58-1F67A824C7B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2BC331E1-0466-4E87-AD58-1F67A824C7B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59BD9B11-2895-46B8-B9FE-28530236491A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59BD9B11-2895-46B8-B9FE-28530236491A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59BD9B11-2895-46B8-B9FE-28530236491A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59BD9B11-2895-46B8-B9FE-28530236491A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4635B874-9720-43BE-92F1-10FBA9C6DFD6}
+		SolutionGuid = {707DD256-2710-48A7-A9E5-86D0C57057B3}
 	EndGlobalSection
 EndGlobal

@@ -1,5 +1,6 @@
 @echo off
-taskkill /F /IM "Valuator.exe" /T
-taskkill /F /IM "nginx.exe" /T
-taskkill /F /IM "RankCalculator.exe" /T
-taskkill /F /IM "nats-server.exe" /T
+taskkill /f /im valuator.exe
+taskkill /f /im nginx.exe
+taskkill /f /im rankCalculator.exe
+taskkill /f /im EventsLogger.exe
+taskkill /f /im nats-server.exe
