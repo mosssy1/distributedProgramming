@@ -45,13 +45,25 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "NATS.Client": {
               "target": "Package",
               "version": "[1.1.5, )"
             },
+            "Pipelines.Sockets.Unofficial": {
+              "target": "Package",
+              "version": "[2.2.8, )"
+            },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.7.33, )"
+            },
+            "System.IO.Pipelines": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [

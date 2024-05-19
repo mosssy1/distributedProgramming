@@ -69,7 +69,10 @@ public class IndexModel : PageModel
 
         if (dbConnection != null) 
         {
-            IDatabase savingDb = ConnectionMultiplexer.Connect(ConfigurationOptions.Parse(dbConnection)).GetDatabase();
+            ConfigurationOptions redisConfiguration = ConfigurationOptions.Parse(dbConnection);
+            redisConfiguration.AbortOnConnectFail = false; // Разрешить повторные попытки подключения
+            IDatabase savingDb = ConnectionMultiplexer.Connect(redisConfiguration).GetDatabase();
+            //IDatabase savingDb = ConnectionMultiplexer.Connect(ConfigurationOptions.Parse(dbConnection)).GetDatabase();
 
             string similarityKey = "SIMILARITY-" + id;
             //TODO: посчитать similarity и сохранить в БД по ключу similarityKey
@@ -125,6 +128,7 @@ public class IndexModel : PageModel
         }
 
         ConfigurationOptions redisConfiguration = ConfigurationOptions.Parse(dbConnection);
+        redisConfiguration.AbortOnConnectFail = false; // Разрешить повторные попытки подключения
         ConnectionMultiplexer redisConnection = ConnectionMultiplexer.Connect(redisConfiguration);
         IDatabase savingDb = redisConnection.GetDatabase();
 
