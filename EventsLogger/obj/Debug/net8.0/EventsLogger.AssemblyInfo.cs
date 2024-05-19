@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EventsLogger")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+725fbb365fde7696f7a64b6432ba294ebafd17d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ef896fc390113a47b736d9a55fcbedbc2f4b5bf")]
 [assembly: System.Reflection.AssemblyProductAttribute("EventsLogger")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EventsLogger")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

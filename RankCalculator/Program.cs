@@ -1,67 +1,105 @@
 ﻿using NATS.Client;
 using System.Text;
-using StackExchange.Redis;
 using System.Text.Json;
+using StackExchange.Redis;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Data.Common;
+
 namespace RankCalculator
 {
+    class TextData
+    {
+        public TextData(string id, double data)
+        {
+            this.id = id;
+            this.data = data;
+        }
+        public string id { get; set; }
+        public double data { get; set; }
+    }
+
+    class IdAndCountryOfText
+    {
+        public IdAndCountryOfText(string country, string textId)
+        {
+            this.textId = textId;
+            this.country = country;
+        }
+        public string country { get; set; }
+        public string textId { get; set; }
+    }
+
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            ConfigurationOptions redisConfiguration = ConfigurationOptions.Parse("localhost:6379");
-            ConnectionMultiplexer redisConnection = ConnectionMultiplexer.Connect(redisConfiguration);
-            IDatabase db = redisConnection.GetDatabase();
-
-            ConnectionFactory cf = new ();
+            ConnectionFactory cf = new ConnectionFactory();
             IConnection c = cf.CreateConnection();
-            Console.WriteLine("RankCalculator started");
 
-            var s = c.SubscribeAsync("valuator.processing.rank", "rankCalculator", (sender, args) =>
+            var s = c.SubscribeAsync("valuator.processing.rank", "rank_calculator", (sender, args) =>
             {
-                string id = Encoding.UTF8.GetString(args.Message.Data);
+                string data = Encoding.UTF8.GetString(args.Message.Data);
+                IdAndCountryOfText? structData = JsonSerializer.Deserialize<IdAndCountryOfText>(data);
 
-                string textKey = "TEXT-" + id;
-                string text = db.StringGet(textKey);
+                string dbEnvironmentVariable = $"DB_{structData?.country}";
+                string? dbConnection = Environment.GetEnvironmentVariable(dbEnvironmentVariable);
 
-                string rankKey = "RANK-" + id;
+                if (dbConnection == null)
+                {
+                    return;
+                }
 
-                string rank = GetRank(text);
+                IDatabase savingDb = ConnectionMultiplexer.Connect(ConfigurationOptions.Parse(dbConnection)).GetDatabase();
 
-                db.StringSet(rankKey, rank);
+                string textKey = "TEXT-" + structData?.textId;
+                string? text = savingDb?.StringGet(textKey);
 
-                MessageInfo data = new(textKey, rank);
-                string jsonData = JsonSerializer.Serialize(data);
+                string rankKey = "RANK-" + structData?.textId;
+
+                double rank = CalculateRank(text);
+
+                savingDb?.StringSet(rankKey, rank);
+                Console.WriteLine($"LOOKUP: {structData?.textId}, {structData?.country}");
+
+                if (structData == null)
+                {
+                    return;
+                }
+                TextData textData = new TextData(structData.textId, rank);
+                string jsonData = JsonSerializer.Serialize(textData);
 
                 byte[] jsonDataEncoded = Encoding.UTF8.GetBytes(jsonData);
 
-                c.Publish("rankCalculated", jsonDataEncoded);
-
+                c.Publish("valuator.logs.events.rank", jsonDataEncoded);
             });
 
             s.Start();
 
-            Console.WriteLine("Press Enter to exit");
+            Console.WriteLine("Press Enter to exit(RankCalculator)");
             Console.ReadLine();
-
-            s.Unsubscribe();
-
-            c.Drain();
-            c.Close();
         }
-        static string GetRank(string text)
-        {
-            double all = text.Length;
-            double nonAlphabetic = 0;
 
-            foreach (char word in text)
+        static double CalculateRank(string? text)
+        {
+            if (text == null) 
             {
-                if (!char.IsLetter(word))
+                return 0.0;
+            }
+           
+            int totalCharacters = text.Length;
+            int nonAlphabeticCharacters = 0;
+
+            foreach (char character in text)
+            {
+                if (!char.IsLetter(character))
                 {
-                    nonAlphabetic++;
+                    nonAlphabeticCharacters++;
                 }
             }
 
-            return (nonAlphabetic / all).ToString();
+            double contentRank = (double)nonAlphabeticCharacters / totalCharacters;
+
+            return contentRank;
         }
     }
 }

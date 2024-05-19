@@ -4,41 +4,45 @@ using System.Text.Json;
 
 namespace EventsLogger
 {
+    class TextData
+    {
+        public TextData(string id, double data)
+        {
+            this.id = id;
+            this.data = data;
+        }
+        public string id { get; set; }
+        public double data { get; set; }
+    }
     public class Program
     {
-        static void Main()
+        public static void Main(string[] args)
         {
-            Console.WriteLine("EventsLogger started");
+            ConnectionFactory cf = new ConnectionFactory();
+            IConnection c = cf.CreateConnection();
 
-            ConnectionFactory connectionFactory = new();
-            IConnection c = connectionFactory.CreateConnection();
-
-            var rankSubscriber = c.SubscribeAsync("rankCalculated", "event_logger", (sender, args) =>
+            var rankSubscriber = c.SubscribeAsync("valuator.logs.events.rank", "events_logger", (sender, args) =>
             {
-                string id = Encoding.UTF8.GetString(args.Message.Data);
-                MessageInfo? info = JsonSerializer.Deserialize<MessageInfo>(id);
-                Console.WriteLine(
-                    $"1.Rank\n" +
-                    $"2.Id - {info.Id}\n" +
-                    $"3.Result - {info.Result}");
+                string data = Encoding.UTF8.GetString(args.Message.Data);
+                TextData? info = JsonSerializer.Deserialize<TextData>(data);
+                Console.WriteLine($"1. Rank\n2. RecordId = {info?.id}\n3. {info?.data}");
+                
             });
-
             rankSubscriber.Start();
 
-            var similaritySubscriber = c.SubscribeAsync("similarityCalculated", "event_logger", (sender, args) =>
+            var similaritySubcriber = c.SubscribeAsync("valuator.logs.events.similarity", "events_logger", (sender, args) =>
             {
-                string id = Encoding.UTF8.GetString(args.Message.Data);
-                MessageInfo? info = JsonSerializer.Deserialize<MessageInfo>(id);
-                Console.WriteLine(
-                    $"1.Similarity\n" +
-                    $"2.Id - {info.Id}\n" +
-                    $"3.Result - {info.Result}");
+                string data = Encoding.UTF8.GetString(args.Message.Data);
+                TextData? info = JsonSerializer.Deserialize<TextData>(data);
+                Console.WriteLine($"1. Similarity\n2. RecordId = {info?.id}\n3. {info?.data}");
+                
             });
-
-            similaritySubscriber.Start();
+            similaritySubcriber.Start();
 
             Console.WriteLine("Press Enter to exit(EventsLogger)");
             Console.ReadLine();
+
         }
     }
+
 }

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "NATS.Client/1.1.4": {
+      "NATS.Client/1.1.5": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/NATS.Client.dll": {
@@ -18,10 +18,10 @@
     }
   },
   "libraries": {
-    "NATS.Client/1.1.4": {
-      "sha512": "lcMgs/aNBr+N7vRek35Itk/fs7UmyQSVtfGyQPKA5Oh8Olg+0L4XHuI98d2euF3E2bet9KKADYesW/OAEmA6VQ==",
+    "NATS.Client/1.1.5": {
+      "sha512": "fr0qHLrw5XgoNmeAkgHO1DymCpLDQG4M7bmBamRo/Nw+Bq79uWZlmwnUI81duZEvriwMCVxjAUEWwwRzcbAV5g==",
       "type": "package",
-      "path": "nats.client/1.1.4",
+      "path": "nats.client/1.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -31,7 +31,7 @@
         "lib/netstandard1.6/NATS.Client.xml",
         "lib/netstandard2.0/NATS.Client.dll",
         "lib/netstandard2.0/NATS.Client.xml",
-        "nats.client.1.1.4.nupkg.sha512",
+        "nats.client.1.1.5.nupkg.sha512",
         "nats.client.nuspec",
         "package-icon.png"
       ]
@@ -39,7 +39,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "NATS.Client >= 1.1.4"
+      "NATS.Client >= 1.1.5"
     ]
   },
   "packageFolders": {
@@ -88,7 +88,7 @@
         "dependencies": {
           "NATS.Client": {
             "target": "Package",
-            "version": "[1.1.4, )"
+            "version": "[1.1.5, )"
           }
         },
         "imports": [
