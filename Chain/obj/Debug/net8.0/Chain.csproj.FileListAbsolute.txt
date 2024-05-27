@@ -1,0 +1,15 @@
+D:\ycheba\distrProgramming\distributedProgramming\Chain\bin\Debug\net8.0\Chain.exe
+D:\ycheba\distrProgramming\distributedProgramming\Chain\bin\Debug\net8.0\Chain.deps.json
+D:\ycheba\distrProgramming\distributedProgramming\Chain\bin\Debug\net8.0\Chain.runtimeconfig.json
+D:\ycheba\distrProgramming\distributedProgramming\Chain\bin\Debug\net8.0\Chain.dll
+D:\ycheba\distrProgramming\distributedProgramming\Chain\bin\Debug\net8.0\Chain.pdb
+D:\ycheba\distrProgramming\distributedProgramming\Chain\obj\Debug\net8.0\Chain.GeneratedMSBuildEditorConfig.editorconfig
+D:\ycheba\distrProgramming\distributedProgramming\Chain\obj\Debug\net8.0\Chain.AssemblyInfoInputs.cache
+D:\ycheba\distrProgramming\distributedProgramming\Chain\obj\Debug\net8.0\Chain.AssemblyInfo.cs
+D:\ycheba\distrProgramming\distributedProgramming\Chain\obj\Debug\net8.0\Chain.csproj.CoreCompileInputs.cache
+D:\ycheba\distrProgramming\distributedProgramming\Chain\obj\Debug\net8.0\Chain.sourcelink.json
+D:\ycheba\distrProgramming\distributedProgramming\Chain\obj\Debug\net8.0\Chain.dll
+D:\ycheba\distrProgramming\distributedProgramming\Chain\obj\Debug\net8.0\refint\Chain.dll
+D:\ycheba\distrProgramming\distributedProgramming\Chain\obj\Debug\net8.0\Chain.pdb
+D:\ycheba\distrProgramming\distributedProgramming\Chain\obj\Debug\net8.0\Chain.genruntimeconfig.cache
+D:\ycheba\distrProgramming\distributedProgramming\Chain\obj\Debug\net8.0\ref\Chain.dll
