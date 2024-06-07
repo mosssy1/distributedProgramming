@@ -1,0 +1,15 @@
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\bin\Debug\net8.0\Client.exe
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\bin\Debug\net8.0\Client.deps.json
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\bin\Debug\net8.0\Client.runtimeconfig.json
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\bin\Debug\net8.0\Client.dll
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\bin\Debug\net8.0\Client.pdb
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\obj\Debug\net8.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\obj\Debug\net8.0\Client.AssemblyInfoInputs.cache
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\obj\Debug\net8.0\Client.AssemblyInfo.cs
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\obj\Debug\net8.0\Client.csproj.CoreCompileInputs.cache
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\obj\Debug\net8.0\Client.sourcelink.json
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\obj\Debug\net8.0\Client.dll
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\obj\Debug\net8.0\refint\Client.dll
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\obj\Debug\net8.0\Client.pdb
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\obj\Debug\net8.0\Client.genruntimeconfig.cache
+D:\ycheba\distrProgramming\distributedProgramming\Chat\Client\obj\Debug\net8.0\ref\Client.dll
